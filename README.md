@@ -36,18 +36,13 @@ O fluxo de trabalho foi desenhado especificamente para superar as barreiras de u
 
 ## 📈 Resultados e Análises Analíticas
 
-### A. Controle de Qualidade e Correlação de Dispersão
-O gráfico de dispersão (`FeatureScatter`) correlaciona a contagem de RNAs detectados com o número total de features identificadas por célula e a porcentagem mitocondrial, isolando os parâmetros thresholds antes da filtragem celular rigorosa.
+### A. Score de assinatura
 
-![Quality Control](results/QC_Scatter.png)
+![Score de assinatura](results/Score_Assinatura.png)
 
-### B. Validação de Marcadores Canônicos via DotPlot
+### B. UMAP_clusters
 
-O gráfico de pontos (`DotPlot`) valida a identidade celular ao cruzar os clusters identificados com marcadores canônicos clássicos da literatura (como `CD3D`/`CD3E` para células T, `MS4A1` para células B, `LYZ` para linhagem mieloide, e `EPCAM`/`KRT19` para células epiteliais/tumorais). 
-
-A análise simultânea do diâmetro do ponto (frequência de expressão no cluster) e da intensidade da cor (nível médio de expressão) confirma o sucesso da segregação fenotípica obtida.
-
-![DotPlot Genes Alvo](results/DotPlot_Genes_Alvos.png)
+![UMAP clusters](results/UMAP_clusters.png)
 
 ### C. Anotação Automatizada de Identidades Celulares
 Utilizando o pacote `SingleR` contra a referência do *Human Primary Cell Atlas*, as populações foram rotuladas de forma robusta a nível de cluster, revelando a composição imunitária e parenquimatosa do microambiente tumoral.
