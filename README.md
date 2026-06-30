@@ -41,10 +41,13 @@ O gráfico de dispersão (`FeatureScatter`) correlaciona a contagem de RNAs dete
 
 ![Quality Control](results/QC_Scatter.png)
 
-### B. Projeção UMAP e Mapeamento de Tecido
-A redução dimensional por UMAP mapeia espacialmente a arquitetura celular global do dataset, agrupando de forma não supervisionada as células conforme sua proveniência tecidual e metadados clínicos.
+### B. Validação de Marcadores Canônicos via DotPlot
 
-![UMAP Blueprint](results/UMAP_Blueprint.png)
+O gráfico de pontos (`DotPlot`) valida a identidade celular ao cruzar os clusters identificados com marcadores canônicos clássicos da literatura (como `CD3D`/`CD3E` para células T, `MS4A1` para células B, `LYZ` para linhagem mieloide, e `EPCAM`/`KRT19` para células epiteliais/tumorais). 
+
+A análise simultânea do diâmetro do ponto (frequência de expressão no cluster) e da intensidade da cor (nível médio de expressão) confirma o sucesso da segregação fenotípica obtida.
+
+![DotPlot Genes Alvo](results/DotPlot_Genes_Alvos.png)
 
 ### C. Anotação Automatizada de Identidades Celulares
 Utilizando o pacote `SingleR` contra a referência do *Human Primary Cell Atlas*, as populações foram rotuladas de forma robusta a nível de cluster, revelando a composição imunitária e parenquimatosa do microambiente tumoral.
