@@ -22,10 +22,7 @@ O fluxo de trabalho foi desenhado especificamente para superar as barreiras de u
 
 ```text
 ├── data/
-│   ├── GSE236581_barcodes.tsv.gz        # Barcodes das células do GEO (GSE236581)
-│   ├── GSE236581_features.tsv.gz        # ID e símbolos oficiais dos genes (GEO)
-│   ├── GSE236581_counts.mtx.gz          # Matriz de contagem bruta comprimida (GEO)
-│   └── GSE236581_CRC-ICB_metadata.txt.gz# Metadados clínicos dos pacientes e amostras
+│   ├── Download_data.R                  # Baixar dados do GEO (GSE236581)
 ├── scripts/
 │   └── pipeline_scrna.R                 # Pipeline R principal (QC, Seurat, SingleR)
 ├── results/                             # Diretório gerado automaticamente com os outputs
@@ -66,10 +63,26 @@ O heatmap de expressão média agregada consolida a assinatura molecular de clus
 
 ---
 
-## 🚀 Como Executar o Pipeline
+## Como Executar o Pipeline
 
 1. **Clonar o repositório:**
    ```bash
    git clone [https://github.com/cidinaria/single-cell_colorectal_cancer.git](https://github.com/cidinaria/single-cell_colorectal_cancer.git)
    cd single-cell_colorectal_cancer
+   
+2. **Preparar os Dados:**
+
+Baixe as matrizes correspondentes ao acesso GSE236581 no NCBI GEO e armazene os arquivos comprimidos (.gz) na pasta data/.
+
+3. **Executar o Pipeline:**
+
+   ```bash
+   Rscript scripts/pipeline_scrna.R
+
+## 📝 Citações Relacionadas
+Hao, Y., Stuart, T., Kowalski, M.H. et al. Dictionary learning for integrative, multimodal and scalable single-cell analysis. Nat Biotechnol 42, 293–304 (2024). [https://doi.org/10.1038/s41587-023-01767-y]
+
+Aran, D., Looney, A.P., Liu, L. et al. Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage. Nat Immunol 20, 163–172 (2019). [https://doi.org/10.1038/s41590-018-0276-y]
+
+Wang, Y., Zhang, Y., Mao, Z. et al. Integrative single-cell RNA-seq and transcriptomic analysis uncovers cellular heterogeneity and immunotherapy resistance mechanisms in colorectal cancer. Discov Onc (2026). [https://doi.org/10.1007/s12672-026-05284-7]
    
